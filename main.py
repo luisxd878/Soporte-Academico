@@ -34,6 +34,9 @@ def validar_tipo_consulta(tipo_consulta):
     tipos_validos = ["matricula", "pagos", "constancia", "plataforma", "otro"]
     return tipo_consulta.strip().lower() in tipos_validos
 
+# Req. 8 y 9: los datos se pasan como parametros entre funciones,
+# sin variables globales. Las variables (codigo, nombre, etc.) son
+# locales a cada funcion.
 
 def registrar_solicitud():
     codigo = input("Código de estudiante: ")
