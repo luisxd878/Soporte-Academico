@@ -1,3 +1,7 @@
+def mostrar_menu():
+    print("=== Sistema de Orientación y Registro de Atenciones ===")
+    print("1. Registrar nueva solicitud")
+    print("2. Salir")
 def validar_codigo(codigo, longitud_minima=6):
     if codigo.strip() == "":
         return False
