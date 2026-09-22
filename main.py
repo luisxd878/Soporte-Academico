@@ -1,3 +1,27 @@
+def ejecutar_pruebas():
+    print("\n=== EJECUTANDO PRUEBAS ===\n")
+
+    # Prueba 1: datos válidos
+    codigo_valido = validar_codigo("12345678")
+    print("Prueba 1 - Código válido:", "OK" if codigo_valido else "FALLÓ")
+
+    # Prueba 2: código vacío
+    codigo_vacio = validar_codigo("")
+    print("Prueba 2 - Código vacío detectado:", "OK" if not codigo_vacio else "FALLÓ")
+
+    # Prueba 3: tipo de consulta incorrecto
+    tipo_incorrecto = validar_tipo_consulta("base de datos")
+    print("Prueba 3 - Tipo incorrecto detectado:", "OK" if not tipo_incorrecto else "FALLÓ")
+
+    # Prueba 4: prioridad alta
+    prioridad_alta = asignar_prioridad("pagos")
+    print("Prueba 4 - Prioridad alta (pagos):", "OK" if prioridad_alta == "Alta" else "FALLÓ")
+
+    # Prueba 5: prioridad baja
+    prioridad_baja = asignar_prioridad("constancia")
+    print("Prueba 5 - Prioridad baja (constancia):", "OK" if prioridad_baja == "Baja" else "FALLÓ")
+
+    print("\n=== FIN DE PRUEBAS ===\n")
 def mostrar_resumen(solicitud):
     print("\n--- Resumen de la solicitud ---")
     print("Código:", solicitud["codigo"])
@@ -71,6 +95,8 @@ def registrar_solicitud():
     return solicitud
 
 if __name__ == "__main__":
+    ejecutar_pruebas()
+    
     solicitudes = []
 
     for i in range(3):
