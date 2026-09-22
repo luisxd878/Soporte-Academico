@@ -1,3 +1,11 @@
+def mostrar_resumen(solicitud):
+    print("\n--- Resumen de la solicitud ---")
+    print("Código:", solicitud["codigo"])
+    print("Nombre:", solicitud["nombre"])
+    print("Tipo de consulta:", solicitud["tipo_consulta"])
+    print("Descripción:", solicitud["descripcion"])
+    print("Prioridad:", solicitud["prioridad"])
+    print("-------------------------------\n")
 def asignar_prioridad(tipo_consulta):
     if tipo_consulta == "plataforma":
         return "Alta"
@@ -61,4 +69,4 @@ def registrar_solicitud():
 
 if __name__ == "__main__":
     solicitud = registrar_solicitud()
-    print(solicitud)
+    mostrar_resumen(solicitud)
