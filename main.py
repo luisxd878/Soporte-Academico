@@ -19,7 +19,8 @@ def validar_codigo(codigo, longitud_minima=6):
     if len(codigo) < longitud_minima:
         return False
     return True
-
+def validar_texto_obligatorio(texto):
+    return texto.strip() != ""
 
 def validar_tipo_consulta(tipo_consulta):
     tipos_validos = ["matricula", "pagos", "constancia", "plataforma", "otro"]
@@ -33,6 +34,9 @@ def registrar_solicitud():
         codigo = input("Código de estudiante: ")
 
     nombre = input("Nombre: ")
+    while not validar_texto_obligatorio(nombre):
+        print("El nombre no puede estar vacío.")
+        nombre = input("Nombre: ")
 
     tipo_consulta = input("Tipo de consulta (matricula/pagos/constancia/plataforma/otro): ")
     while not validar_tipo_consulta(tipo_consulta):
@@ -40,6 +44,9 @@ def registrar_solicitud():
         tipo_consulta = input("Tipo de consulta (matricula/pagos/constancia/plataforma/otro): ")
 
     descripcion = input("Descripción breve: ")
+    while not validar_texto_obligatorio(descripcion):
+        print("La descripción no puede estar vacía.")
+        descripcion = input("Descripción breve: ")
 
     prioridad = asignar_prioridad(tipo_consulta)
 
