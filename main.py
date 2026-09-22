@@ -1,3 +1,14 @@
+def asignar_prioridad(tipo_consulta):
+    if tipo_consulta == "plataforma":
+        return "Alta"
+    elif tipo_consulta == "pagos":
+        return "Alta"
+    elif tipo_consulta == "matricula":
+        return "Media"
+    elif tipo_consulta == "constancia":
+        return "Baja"
+    else:
+        return "Baja"
 def mostrar_menu():
     print("=== Sistema de Orientación y Registro de Atenciones ===")
     print("1. Registrar nueva solicitud")
@@ -30,14 +41,16 @@ def registrar_solicitud():
 
     descripcion = input("Descripción breve: ")
 
+    prioridad = asignar_prioridad(tipo_consulta)
+
     solicitud = {
         "codigo": codigo,
         "nombre": nombre,
         "tipo_consulta": tipo_consulta,
-        "descripcion": descripcion
+        "descripcion": descripcion,
+        "prioridad": prioridad
     }
     return solicitud
-
 
 if __name__ == "__main__":
     solicitud = registrar_solicitud()
