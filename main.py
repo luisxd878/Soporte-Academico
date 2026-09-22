@@ -71,5 +71,12 @@ def registrar_solicitud():
     return solicitud
 
 if __name__ == "__main__":
-    solicitud = registrar_solicitud()
-    mostrar_resumen(solicitud)
+    solicitudes = []
+
+    for i in range(3):
+        print(f"\n--- Registrando solicitud N° {i + 1} ---")
+        solicitud = registrar_solicitud()
+        solicitudes.append(solicitud)
+        mostrar_resumen(solicitud)
+
+    print(f"\nSe registraron {len(solicitudes)} solicitudes en total.")
