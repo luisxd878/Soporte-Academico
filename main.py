@@ -1,3 +1,4 @@
+# Req. 11: funcion que ejecuta pruebas de validacion
 def ejecutar_pruebas():
     print("\n=== EJECUTANDO PRUEBAS ===\n")
 
@@ -22,6 +23,7 @@ def ejecutar_pruebas():
     print("Prueba 5 - Prioridad baja (constancia):", "OK" if prioridad_baja == "Baja" else "FALLÓ")
 
     print("\n=== FIN DE PRUEBAS ===\n")
+# Req. 7: funcion sin retorno - muestra resumen de la solicitud
 def mostrar_resumen(solicitud):
     print("\n--- Resumen de la solicitud ---")
     print("Código:", solicitud["codigo"])
@@ -30,6 +32,7 @@ def mostrar_resumen(solicitud):
     print("Descripción:", solicitud["descripcion"])
     print("Prioridad:", solicitud["prioridad"])
     print("-------------------------------\n")
+# Req. 5: funcion con retorno - asigna prioridad segun tipo de consulta
 def asignar_prioridad(tipo_consulta):
     if tipo_consulta == "plataforma":
         return "Alta"
@@ -41,23 +44,28 @@ def asignar_prioridad(tipo_consulta):
         return "Baja"
     else:
         return "Baja"
+# Req. 4: funcion sin retorno - muestra el menu principal
 def mostrar_menu():
     print("=== Sistema de Orientación y Registro de Atenciones ===")
     print("1. Registrar nueva solicitud")
     print("2. Salir")
+# Req. 2: funcion con retorno - valida codigo de estudiante
 def validar_codigo(codigo, longitud_minima=6):
     if codigo.strip() == "":
         return False
     if len(codigo) < longitud_minima:
         return False
     return True
+# Req. 6: funcion con retorno - valida que un texto no este vacio
 def validar_texto_obligatorio(texto):
     return texto.strip() != ""
 
+# Req. 3: funcion con retorno - valida tipo de consulta
 def validar_tipo_consulta(tipo_consulta):
     tipos_validos = ["matricula", "pagos", "constancia", "plataforma", "otro"]
     return tipo_consulta.strip().lower() in tipos_validos
 
+# Req. 1: registra los datos basicos de una solicitud
 # Req. 8 y 9: los datos se pasan como parametros entre funciones,
 # sin variables globales. Las variables (codigo, nombre, etc.) son
 # locales a cada funcion.
